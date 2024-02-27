@@ -17,10 +17,10 @@ app.use('/api/logs', logRoutes)
 app.use('/api/experiments', experimentRoutes)
 
 // Connect to DB
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect("mongodb+srv://ayerinmattxc:g3YR6DvjayVOECYS@violationtracker.fpqujlc.mongodb.net/?retryWrites=true&w=majority")
     .then(() => {
         // Listen for requests
-        app.listen(process.env.PORT, () => {
+        app.listen(process.env.PORT || 8000, () => {
             console.log('[RES02 Proj] Connected! Listening on port ', process.env.PORT)
         }) 
     })
