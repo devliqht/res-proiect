@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2em;
+    justify-content: space-between;
+}
+
+.school-logo {
+    max-width: 512px;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-links a {
+    padding: 16px;
+    font-family: 'Lexend';
+    font-weight: 100;
+}
+
+.nav-links a:hover {
+    background: var(--uscgreen);
+}

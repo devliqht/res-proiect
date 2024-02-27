@@ -1,0 +1,87 @@
+.home-student {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-staff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--uscgreen);
+    width: 100vw;
+    height: 100vh;
+}
+
+.studentView {
+    background: #f2f1f1;
+    margin: 10px;
+    padding: 16px;
+    font-family: 'Lato', "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: 2px solid #d9d9d9d1;
+    width: 100%;
+}
+
+.studentProfileHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+.studentProfileHeader .schoolLogo {
+    max-width: 64px;
+}
+
+.studentDetail {
+    margin: 1em;
+    padding: 10px;
+    background: var(--uscgreen);
+    border: 2px solid #00a94f;
+    border-radius: 8px;
+}
+
+
+.studentDetail i {
+    margin-left: 8px;
+}
+.logForm {
+    width: 90%;
+    display: flex;
+    background: #d9d9d969;
+    flex-direction: column;
+    margin: 1em;
+    font-family: 'Lato', "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid #d9d9d9d1;
+}
+
+.logForm h2 {
+    text-align: center;
+    margin: 8px;
+}
+
+.apparatus {
+    background: #d9d9d969;
+    font-family: 'Lato', "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid #d9d9d9d1;
+    margin-bottom: 6px;
+}
+
+.appratusList {
+    display: flex;
+    flex-direction: column;
+}
+.experiment .experimentInformation {
+    margin: 10px;
+}
+
+iframe
+{
+    display: none;
+}
