@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
 }
 
 .experimentInfo, .logList {
@@ -14,10 +13,8 @@
     border-radius: 10px;
 }
 .staffView {
-    background: #f2f1f1;
     margin: 10px;
     padding: 16px;
-    border: 2px solid #d9d9d9d1;
     width: 100%;
     height: 100%;
 }
@@ -59,7 +56,7 @@
 
 .log {
     margin: 10px;
-    background: #f2f1f169;
+    background: #d9d9d969;
     border-radius: 8px;
     border: 2px solid #d9d9d9d1;
     padding: 16px;
@@ -67,4 +64,25 @@
 
 .logDetail { 
     margin: 4px;
+}
+
+.apparatusInfo {
+    margin: 10px;
+    padding: 16px;
+    background: #ffffff;
+    border: 2px solid #d9d9d9d1;
+}
+
+.apparatusList {
+    margin: 10px;
+}
+
+.signed-in {
+    margin: 10px;
+    padding: 16px;
+}
+
+.sign-in {
+    margin: 10px;
+    padding: 16px;
 }

@@ -46,7 +46,7 @@ function App() {
           
 
           {experiments && experiments.map(experiment => (
-            <Route key={experiment._id} path={'/studentView/'+experiment._id} element={<div className="home"><StudentView/><StudentViewWithLogForm experiment={experiment}/></div>}/>
+            <Route key={experiment._id} path={'/studentView/'+experiment._id} element={<div className="home"><StudentViewWithLogForm experiment={experiment}/></div>}/>
           ))}
         </Routes>
       </BrowserRouter>

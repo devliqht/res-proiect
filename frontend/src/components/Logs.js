@@ -25,31 +25,51 @@ const Logs = () => {
       fetchLogs()
     }, [dispatchLogs])
 
+    const logsDelete = async (id) => {
+        const response = await fetch('/api/logs/' + id, {
+          method: 'DELETE'
+        })
+        const json = await response.json()
+    
+        if (response.ok) {
+          dispatchLogs({type: 'DELETE_LOG', payload: json})
+        }
+    }
     return (
         <div className="log">
             {logs && logs.map(log =>(
                 <div className="key" key={log._id}>
                     <div className="logDetail">
-                    <h2>{log.studentName}</h2>
+                    
                     </div>
                     <div className="logDetail">
-                        <h3>Student ID: </h3>
-                        <p>{log.studentID}</p>
+                    <h1>{log.studentName}</h1>
+                    <p>Entry {log._id}</p>
+                    </div>
+                    <div className="logDetail">
+                        <h3><span style={{color: 'var(--uscgreen)'}}>Student ID:</span> {log.studentID}</h3>
                     </div>
                     <div className="logDetail">      
-                        <h3>Student Blocksection: </h3>
-                        <p>{log.studentBlocksection}</p>
+                        <h3><span style={{color: 'var(--uscgreen)'}}>Student Blocksection:</span> {log.studentBlocksection}</h3>
                     </div>
                     <div className="logDetail">            
-                        <h3>Student Group No.: </h3>
-                        <p>{log.studentGroup}</p>
+                        <h3><span style={{color: 'var(--uscgreen)'}}>Student Group No.:</span> #{log.studentGroup}</h3>
+                    </div>
+                    <div className="logDetail">            
+                        <h3><span style={{color: 'var(--uscgreen)'}}>Log Date:</span> {log.logTimeAndDate}</h3>
                     </div>
                     <div className="logDetail">    
-                    <h3>Apparatuses Borrowed: </h3>
+                    <h3><span style={{color: 'var(--uscgreen)'}}>Apparatuses Borrowed: </span> </h3>
+                    <div className="apparatusList">
                         {log.apparatuses.map(apparatusArr => (
-                            <p>{apparatusArr.name}</p>
-                        ))}        
+                                <div className="apparatus" key={apparatusArr._id}>
+                                    <h2>{apparatusArr.apparatus}</h2>
+                                </div>
+                            ))}  
                     </div>
+        
+                    </div>
+                    <button className="material-symbols-outlined" onClick={() => { logsDelete(log._id) }}>Delete</button>
                 </div>
             ))}
 

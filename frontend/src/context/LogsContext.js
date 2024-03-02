@@ -23,7 +23,7 @@ export const logsReducer = (state, action) => {
 
 export const LogsContextProvider = ({ children }) => {
   const [state, dispatchLogs] = useReducer(logsReducer, { 
-    logs: null
+    logs: []
   })
   
   return (

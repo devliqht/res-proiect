@@ -23,7 +23,7 @@ const Experiments = ({experiments}) => {
     return (
         <div className="experimentList">
         {experiments && experiments.map(experiment => (
-                    <div className="experiment" key={experiment._id}>
+                <div className="experiment" key={experiment._id}>
                     <h1 style={{paddingBottom: '10px'}}>Experiment Entry</h1>
                     <h3><span style={{color: 'var(--uscgreen)'}}>Experiment Name: </span>{experiment.experimentName}</h3>
                     <p></p>
@@ -39,9 +39,9 @@ const Experiments = ({experiments}) => {
                         {experiment.apparatusList.map(apparatusArr => (
                             <p className="apparatusArr">{apparatusArr.apparatus}</p>
                         ))}
-                        <button className="material-symbols-outlined" onClick={() => { experimentDelete(experiment._id) }}>Delete</button>
+                        
                     </div>
-
+                    <button className="material-symbols-outlined" onClick={() => { experimentDelete(experiment._id) }}>Delete</button>
                 </div>
         ))}
 

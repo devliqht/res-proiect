@@ -10,18 +10,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--uscgreen);
     width: 100vw;
     height: 100vh;
 }
 
 .studentView {
-    background: #f2f1f1;
+    background: #ffffff;
+    border-radius: 8px;
     margin: 10px;
-    padding: 16px;
     font-family: 'Lato', "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
     border: 2px solid #d9d9d9d1;
-    width: 100%;
 }
 
 .studentProfileHeader {
@@ -36,11 +34,11 @@
 }
 
 .studentDetail {
-    margin: 1em;
+    margin: 10px;
     padding: 10px;
-    background: var(--uscgreen);
-    border: 2px solid #00a94f;
-    border-radius: 8px;
+    background: #ffffff;
+    border: 2px solid #d9d9d9d9;
+  
 }
 
 

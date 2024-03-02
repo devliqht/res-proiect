@@ -23,7 +23,7 @@ const logSchema = Schema({
         required: true
     },
     apparatuses: [{
-        name: String
+        apparatus: String
     }]
 }, { timestamps: true })
 

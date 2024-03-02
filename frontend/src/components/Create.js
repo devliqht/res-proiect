@@ -33,6 +33,7 @@ const ExperimentCreate = () => {
     const SaveData = async (event) => {
         event.preventDefault();
 
+        console.log(apparatusList);
         const experimentData = { experimentName, experimentNo, apparatusList }
 
         const response = await fetch('/api/experiments', {
