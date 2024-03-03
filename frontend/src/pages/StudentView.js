@@ -145,13 +145,11 @@ const MainStudentView = () => {
     )
 }
 const StudentViewWithLogForm = ({experiment}) => {
-
     const [ studentName, setStudentName ] = useState("");
     const [ studentID, setStudentID ] = useState("");
     const [ studentBlocksection, setStudentBlock ] = useState("");
     const [ studentGroup, setStudentGroup ] = useState("");
     const [ logTimeAndDate, setCurrentDate] = useState('');
-
     useEffect(() => {
       const formatDate = () => {
         const date = new Date();
@@ -161,15 +159,9 @@ const StudentViewWithLogForm = ({experiment}) => {
         const formattedDate = `${month}-${day}-${year}`;
         setCurrentDate(formattedDate);
       };
-  
+
       formatDate(); // Call the function once when the component mounts
-  
-      // Optionally, if you want the date to update every second, you can uncomment the setInterval
-      // const intervalId = setInterval(formatDate, 1000);
-  
-      // Clean-up function to clear the interval when the component unmounts
-      // return () => clearInterval(intervalId);
-    }, []); // Empty dependency array means this useEffect will only run once, on component mount
+    }, []); 
 
     useEffect(() => {
         const fetchLogs = async () => {
@@ -238,6 +230,7 @@ const StudentViewWithLogForm = ({experiment}) => {
         return { apparatus: item.apparatus };
     });
 
+    const [ submitted, setSubmitted ] = useState(false);
     const SaveData = async (event) => { 
         event.preventDefault();
         const logData = { studentName, studentID, studentBlocksection, logTimeAndDate, studentGroup, apparatuses }
@@ -255,6 +248,7 @@ const StudentViewWithLogForm = ({experiment}) => {
         }
         if (response.ok) {
             dispatchLogs({type: 'CREATE_LOG', payload: json})
+            setSubmitted(true);
         }
     }
     
@@ -356,7 +350,9 @@ const StudentViewWithLogForm = ({experiment}) => {
                     ))}
                 </div>
             </div>
-            <button id="submit-button" className="button-3" role="button" type="submit">Submit</button>
+            <button id="submit-button" className="button-3" role="button" type="submit" disabled={submitted}>Submit</button>
+            { submitted == true && <div className="experiment"><h1><span style={{color: 'var(--uscgreen)'}}>Successfully submitted.</span></h1></div>}
+            
         </form>
     )
 }
